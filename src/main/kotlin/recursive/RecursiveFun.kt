@@ -16,7 +16,6 @@ fun recursiveFun(x: Int): Int {                                  // 1.yöntem
 
 }
 
-
 fun factorialCalculation(x: Int): Int {                          // 2. yöntem
     if (x > 1) {
         print("$x.")

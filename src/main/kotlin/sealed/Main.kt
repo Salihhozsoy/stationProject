@@ -5,31 +5,29 @@ import java.lang.Exception
 
 
 fun main() {
-
-
     val state = getUsers()
-    when(state){
-        UIState.Idle-> {}
-        UIState.Loading-> {}
-        is UIState.Error-> {
+    when (state) {
+        UIState.Idle -> {}
+        UIState.Loading -> {}
+        is UIState.Error -> {
             state.exception.printStackTrace()
         }
-        is UIState.Result-> {
+
+        is UIState.Result -> {
             state.users.forEach {
                 it.print()
             }
         }
     }
-
 }
 
-fun getUsers():UIState {
+fun getUsers(): UIState {
 
-    val state:UIState = try {
+    val state: UIState = try {
         //network request
         Thread.sleep(3000)
         UIState.Result(Database.users)
-    }catch (e:Exception){
+    } catch (e: Exception) {
         UIState.Error(e)
     }
 

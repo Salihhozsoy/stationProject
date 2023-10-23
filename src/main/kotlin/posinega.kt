@@ -3,6 +3,8 @@ fun main() {
     staircase(6)
     val asd= time("12:23:00AM")
     println(asd)
+
+    fibonacci(15)
 }
 
 fun count(arr: Array<Int>) {
@@ -19,7 +21,6 @@ fun count(arr: Array<Int>) {
 }
 
 fun staircase(n: Int) {
-
     for (i in 1..n) {
         println(" ".repeat(n - i) + "#".repeat(i))
     }
@@ -39,5 +40,19 @@ fun time(s: String): String {
     val hourStr =hour.toString().padStart(2,'0')
 
     return hourStr + middle
+}
+fun fibonacci(n:Int){
 
+    var firstNum = 0
+    var secondNum =1
+    print("The Fibonacci series till $n :")
+
+    for(i in 1..n){
+
+        print("$firstNum ")
+
+        val sum2= firstNum+secondNum
+        firstNum = secondNum
+        secondNum= sum2
+    }
 }
